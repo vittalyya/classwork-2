@@ -1,0 +1,60 @@
+
+
+;(function($){
+		$.widget( "custom.progressbar", {
+				 options: {
+					value:0,
+					time: 5000,
+				 },
+				 _create: function(){
+					this._createElement(this.element);
+					this._listen();
+				 },
+				 
+				 
+				 _createElement: function(element){
+					 var newSpan = $("<span></span>");
+					 $(element).html(newSpan);
+					 this._setStyle(newSpan);
+				},
+				_setStyle: function(span){
+					$(span).css("width", "0");
+					this._animate(span);
+				},
+				_animate: function(span){
+					$(span).animate({"width": "100%"}, this.options.time);
+				},
+				
+				stopMe: function(){
+					$(this.element).find("span").stop();								
+				},
+				
+				_listen: function(){
+					var self = this;
+					$("#stopCount").on("click", function() {
+														 self.stopMe();
+														 });
+					$("#continueCount").on("click", function() {
+														 self._animate($(self.element).find("span"));
+														 });
+					$("#finishCount").on("click", function() {
+														// $($(self.element).find("span")).animate({"width": "100%"}, 0);
+														$(this.element).find("span").finish();
+														console.log(this);
+														
+														 }.bind(this));
+					$("#refresh").on("click", function() {
+														 self._animate($(self.element).find("span"));
+														 });
+				},
+			
+			
+		   });
+		
+		
+		
+		
+		
+		
+		
+		  })(jQuery);
