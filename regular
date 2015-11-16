@@ -1,0 +1,36 @@
+var str = "We are learning JavaScript eeeeeeeeee 123";
+
+var num = "0939798145";
+
+var strNum = "blabla123456789lalala56789aaaaa0987";
+
+var a = "aJavaScript";
+
+var RegF = new RegExp("f");
+var RegG = new RegExp("g", "i");
+var RegHG = new RegExp("hg", "i");
+
+
+var f = /f/i;
+var g = /g/i;
+var hg = /hg/i;
+
+
+console.log(a.match(/(?=a)JavaScript/));
+
+console.log(strNum.match(/\d{3}/));
+console.log(strNum.match(/\d{3,}/));
+
+console.log(str.search(/e/));
+console.log(str.search(/[gf]/));
+console.log(str.search(/[gf|er]/));
+console.log(str.search(/\d/));
+console.log(str.search(/\w[^d]/));
+console.log(str.search(/[^h]/));
+console.log(str.search(/\dw/));
+
+
+console.log(str.match(/e{5}/));
+console.log(str.match(/[gf]{1,4}/));
+console.log(str.match(/\d{1,4}/));
+console.log(str.match(/\w*/));
