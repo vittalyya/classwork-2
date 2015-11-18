@@ -1,0 +1,76 @@
+var form = document.forms.vika;
+console.log(form.name);
+console.log(form.action);
+console.log(form.method);
+console.log(form.enctype);
+console.log(form.target);
+
+function clickMe(){
+
+	alert('click!!!!!!!!!');
+}
+
+function focusMe(){
+
+	alert('ffffff!!!!!!!!!');
+}
+
+function changeMe(){
+
+	alert(this.value)
+}
+
+
+//form.addEventListener('click', clickMe);
+
+console.log(form.elements[1].checked);
+
+console.log(form.elements[2].value);
+console.log(document.getElementsByClassName('radio'));
+
+var classRadio = document.getElementsByClassName('radio');
+
+for (var i=0; i < classRadio.length; i++) {
+ classRadio[i].addEventListener('change', clickMe);
+
+}
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+   <HEAD>
+      <TITLE>My first HTML document</TITLE>
+   </HEAD>
+   <BODY>
+    
+<form name="vika" action="index.php" method="get" enctype="text/plain" target="_blank">
+
+	
+
+	<input type="text" name="inp" value="hi" placeholder="enter your name"  onfocus="focusMe()" onchange="changeMe()">
+ 
+	<input type="checkbox" name="inp2" value="trrrr" checked="checked">
+
+	<input type="radio" name="rad" value="first" class="radio">
+	<input type="radio" name="rad" value="second" class="radio">
+
+</form>
+
+<select name="select">
+	<option value="1">first</option>
+	<option value="2">second</option>
+
+</select>
+
+
+
+   <script src = "js.js"></script>
+   </BODY>
+</HTML>
